@@ -434,6 +434,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3353666616921926523, guid: bdb3d20afdbb5974ea4f5839e1ff9d25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1525513274}
+    - target: {fileID: 3353666616921926523, guid: bdb3d20afdbb5974ea4f5839e1ff9d25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEnterButtonClicked_Outdoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353666616921926523, guid: bdb3d20afdbb5974ea4f5839e1ff9d25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RoomManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3353666617062148212, guid: bdb3d20afdbb5974ea4f5839e1ff9d25, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -473,6 +485,18 @@ PrefabInstance:
     - target: {fileID: 3353666617230840612, guid: bdb3d20afdbb5974ea4f5839e1ff9d25, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353666617230840614, guid: bdb3d20afdbb5974ea4f5839e1ff9d25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1525513274}
+    - target: {fileID: 3353666617230840614, guid: bdb3d20afdbb5974ea4f5839e1ff9d25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEnterButtonClicked_School
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353666617230840614, guid: bdb3d20afdbb5974ea4f5839e1ff9d25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RoomManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3353666617269073606, guid: bdb3d20afdbb5974ea4f5839e1ff9d25, type: 3}
       propertyPath: m_Layer

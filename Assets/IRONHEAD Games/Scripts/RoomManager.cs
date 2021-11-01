@@ -7,10 +7,11 @@ using Photon.Realtime;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
+    private string mapType;
     // Start is called before the first frame update
     void Start()
     {
-        
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     // Update is called once per frame
@@ -23,6 +24,22 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void JoinRandomRoom()
     {
         PhotonNetwork.JoinRandomRoom();
+    }
+
+    public void OnEnterButtonClicked_Outdoor()
+    {
+        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_OUTDOOR;
+        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties =
+            new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType } };
+        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
+    }
+
+    public void OnEnterButtonClicked_School()
+    {
+        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_SCHOOL;
+        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = 
+            new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType } };
+        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties,0);
     }
     #endregion
 
@@ -50,6 +67,16 @@ public class RoomManager : MonoBehaviourPunCallbacks
             if(PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(MultiplayerVRConstants.MAP_TYPE_KEY, out mapType))
             {
                 Debug.Log("Joined room with the map: " + (string)mapType);
+                if((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_SCHOOL)
+                {
+                    // Load the school scene
+                    PhotonNetwork.LoadLevel("World_School");
+                }
+                else if((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_OUTDOOR)
+                {
+                    // Load the outdoor scene
+                    PhotonNetwork.LoadLevel("World_Outdoor");
+                }
             }
         }
     }
@@ -73,7 +100,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         // 2.School = "school"
 
         ExitGames.Client.Photon.Hashtable customRoomProperties = new ExitGames.Client.Photon.Hashtable() { {
-                MultiplayerVRConstants.MAP_TYPE_KEY, MultiplayerVRConstants .MAP_TYPE_VALUE_SCHOOL} };
+                MultiplayerVRConstants.MAP_TYPE_KEY, mapType} };
 
         roomOptions.CustomRoomPropertiesForLobby = roomPropsInLobby;
         roomOptions.CustomRoomProperties = customRoomProperties;
