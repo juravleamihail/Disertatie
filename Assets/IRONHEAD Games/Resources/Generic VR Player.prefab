@@ -1332,7 +1332,7 @@ MonoBehaviour:
   UIController: {fileID: 8576781889755979760}
   BaseController: {fileID: 8576781888498076799}
   inputActionReference_UISwitcher: {fileID: -4866070369425261670, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  UICanvasGameobject: {fileID: 1584160913356881571}
+  UIGameobjects: {fileID: 1584160913356881571}
 --- !u!1 &8576781889907230949
 GameObject:
   m_ObjectHideFlags: 0
